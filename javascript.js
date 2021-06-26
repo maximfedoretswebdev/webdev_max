@@ -1,22 +1,22 @@
 var objPeople = [
     { // Object @ 0 index
-        username: "maximfedorets",
+        username: "Maxim",
         password: "Maximas2002!"
     },
     { // Object @ 1 index
-        username: "maximfedorets",
+        username: "Max",
         password: "Vfrcbv2002!"
     },
     { // Object @ 2 index
-        username: "max",
-        password: "Maximas2002!"
+        username: "maxim",
+        password: "Maxim2002!"
     }
 
 ]
 
 function getInfo() {
-    var username = document.getElementById('username').value
-    var password = document.getElementById('password').value
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
 
     for(var i = 0; i < objPeople.length; i++) {
         if(username == objPeople[i].username && password == objPeople[i].password) {
@@ -30,40 +30,39 @@ function getInfo() {
 
 
 
+/* Greeting */
+function clock() {
+    var today = new Date();
+    var hourNow = today.getHours();
+    var greeting;
+    var person = "Max";
 
-
-
-
-
-
-
-
-
-const countEl = document.getElementById('count');
-
-updateVisitCount();
-
-function updateVisitCount() {
-	fetch('https://api.countapi.xyz/update/maximfedorets.vercel.app/visits?amount=1')
-	.then(res => res.json())
-	.then(res => {
-		countEl.innerHTML = res.value;
-	})
+if (hourNow > 18) {
+    greeting = "Good evening " + person;
+}else if (hourNow > 12) {
+    greeting = "Good afternoon " + person;
+}else if (hourNow > 0) {
+    greeting = "Good morning " + person;
+}else {
+    greeting = "Welcome " + person;
 }
 
+document.querySelector(".greeting_txt").innerHTML = greeting;
+
+};
+
+clock()
 
 
-// SOCIAL PANEL JS
-const floating_btn = document.querySelector('.floating-btn');
-const close_btn = document.querySelector('.close-btn');
-const social_panel_container = document.querySelector('.social-panel-container');
 
-floating_btn.addEventListener('click', () => {
-	social_panel_container.classList.toggle('visible')
-});
 
-close_btn.addEventListener('click', () => {
-	social_panel_container.classList.remove('visible')
-});
 
-var timer = setInterval( updateVisitCount, 1000);
+
+
+
+
+
+
+
+
+
